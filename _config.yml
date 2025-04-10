@@ -1,2 +1,10 @@
 title: CampusMagazin
-description: Reportagen und Geschichten vom Campus Passau
+description: Reportagen aus Passau
+
+collections:
+  about:
+    output: false
+  videos:
+    output: false
+  beiträge:
+    output: true
