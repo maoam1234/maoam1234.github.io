@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Navigation */
+      .navbar {
+        background-color: #004c6d;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-right: 1rem;
+      }
+
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+
+      .logo {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .search {
+        margin-left: auto;
+      }
+
+      .content {
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">📚 CampusMagazin</div>
+      <nav>
+        <a href="/">Start</a>
+        <a href="/reportage-campusleben.md">Beiträge</a>
+        <a href="#">Videos</a>
+        <a href="#">Über uns</a>
+      </nav>
+      <!-- Optional: Suchfeld -->
+      <div class="search">
+        <input type="text" placeholder="Suchen..." />
+      </div>
+    </div>
+
+    <div class="content">
+      {{ content }}
+    </div>
+  </body>
+</html>
