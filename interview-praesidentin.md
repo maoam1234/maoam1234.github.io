@@ -1,7 +1,7 @@
 layout: default
 title: Interview mit der Präsidentin
 ---
-
+![Campusfoto](images/campus.jpg)
 # Interview mit der Präsidentin
 
 *Von Anna Beispiel · 10. April 2025*
