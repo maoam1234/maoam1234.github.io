@@ -4,73 +4,41 @@ title: Willkommen
 ---
 
 <style>
-  .container {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .column {
-    flex: 1;
-  }
-
-  .video, .post {
-    background: #f2f2f2;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-  }
+  .spalten { display: flex; gap: 2rem; }
+  .spalte { flex: 1; }
+  .box { background: #f2f2f2; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; }
 </style>
 
-# 🎓 Willkommen beim CampusMagazin
+<h1>🎓 Willkommen beim CampusMagazin</h1>
 
-<div class="container">
+<div class="spalten">
 
-  <!-- Spalte 1: Videos -->
-  <div class="column">
+  <!-- Videos -->
+  <div class="spalte">
     <h2>🎥 Videos</h2>
-    <div class="video">
-      <strong>Video 1</strong><br>
-      <em>[YouTube-Embed oder Link]</em>
+    {% for video in site.videos %}
+    <div class="box">
+      <strong>{{ video.title }}</strong><br>
+      <a href="{{ video.link }}">Ansehen</a>
     </div>
-    <div class="video">
-      <strong>Video 2</strong><br>
-      <em>[YouTube-Embed oder Link]</em>
-    </div>
-    <div class="video">
-      <strong>Video 3</strong><br>
-      <em>[YouTube-Embed oder Link]</em>
-    </div>
+    {% endfor %}
   </div>
 
-  <!-- Spalte 2: Beiträge -->
-  <div class="column">
+  <!-- Beiträge -->
+  <div class="spalte">
     <h2>📰 Beiträge</h2>
-    <div class="post">
-      <a href="reportage-campusleben.md"><strong>Das Leben auf dem Campus</strong></a><br>
-      Eine Reportage über Alltag, Mensa & Gespräche.
+    {% for post in site.beiträge %}
+    <div class="box">
+      <strong><a href="{{ post.link }}">{{ post.title }}</a></strong><br>
+      {{ post.teaser }}
     </div>
-    <div class="post">
-      <a href="interview-praesidentin.md"><strong>Interview mit der Präsidentin</strong></a><br>
-      Über Herausforderungen und Chancen der Uni.
-    </div>
-    <div class="post">
-      <a href="#"><strong>[Beitragstitel 3]</strong></a><br>
-      Kurzbeschreibung...
-    </div>
+    {% endfor %}
   </div>
 
-  <!-- Spalte 3: Über uns -->
-  <div class="column">
-    <h2>👩‍💻 Über uns</h2>
-    <p>
-      Wir sind ein Team von Studierenden aus dem Journalistik-Studiengang der Uni Passau.
-    </p>
-    <p>
-      Gemeinsam produzieren wir Reportagen, Scrollytellings, Videos und Interviews.
-    </p>
-    <p>
-      Mehr Infos demnächst!
-    </p>
+  <!-- Über uns -->
+  <div class="spalte">
+    <h2>{{ site.about[0].title }}</h2>
+    <p>{{ site.about[0].text }}</p>
   </div>
 
 </div>
